@@ -1,0 +1,507 @@
+/* Section Vidéo - Dravon Systems & Microsoft Fluent 2 */
+
+.section {
+  position: relative;
+  width: 100%;
+  padding: 40px 0 140px 0;
+  scroll-margin-top: 130px;
+  background-color: transparent;
+  overflow: hidden; /* Empêche tout débordement horizontal causé par la spirale */
+}
+
+/* Conteneur de la spirale en arrière-plan centré derrière le lecteur vidéo */
+.spiralWrapper {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(800px, 94vw, 1380px);
+  height: clamp(800px, 94vw, 1380px);
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Image de la spirale en rotation continue */
+.spiralImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: rotateSpiral 36s linear infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+  opacity: 0.9;
+  user-select: none;
+  filter: drop-shadow(0 0 20px rgba(180, 195, 215, 0.25));
+}
+
+@keyframes rotateSpiral {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Contenu au premier plan (au-dessus de la spirale) */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 52px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* En-tête de la section */
+.header {
+  text-align: center;
+  max-width: 840px;
+  margin-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Badge de statut supérieur */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(0, 98, 245, 0.08);
+  border: 1px solid rgba(0, 98, 245, 0.2);
+  border-radius: 9999px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0062f5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  background-color: #0062f5;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #0062f5;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+/* Titre principal centré */
+.title {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  color: #0b1e42;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px 0;
+}
+
+/* Ligne grise sous le titre (identique à WhoAreWe) */
+.divider {
+  width: 80px;
+  height: 3px;
+  background-color: #dce4ec;
+  border-radius: 2px;
+  margin: 0 auto 24px auto;
+}
+
+/* Sous-titre descriptif */
+.subtitle {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Cadre du Lecteur Vidéo (16:9) */
+.videoCard {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  aspect-ratio: 16 / 9;
+  min-height: 360px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #061226 0%, #0c2146 50%, #061021 100%);
+  border: 1px solid rgba(220, 228, 240, 0.85);
+  box-shadow: 
+    0 30px 80px -20px rgba(11, 30, 66, 0.22),
+    0 12px 30px -10px rgba(0, 98, 245, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.videoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 40px 100px -20px rgba(11, 30, 66, 0.3),
+    0 20px 45px -10px rgba(0, 98, 245, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Texture d'arrière-plan du lecteur */
+.videoBackground {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(0, 98, 245, 0.18) 0%, transparent 65%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  pointer-events: none;
+}
+
+/* Barre supérieure du lecteur */
+.videoTopBar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 30px;
+}
+
+.playerTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  color: #f1f5f9;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.playerLiveBadge {
+  width: 7px;
+  height: 7px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.qualityBadge {
+  padding: 4px 10px;
+  background: rgba(0, 98, 245, 0.3);
+  border: 1px solid rgba(0, 98, 245, 0.5);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Centre du lecteur avec le bouton Play géant */
+.videoCenterArea {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Bouton Play circulaire en glassmorphism */
+.playButtonContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulseRing {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 98, 245, 0.45);
+  animation: pulseExpand 2.8s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseExpand {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+.playButton {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(0, 98, 245, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.videoCard:hover .playButton {
+  transform: scale(1.1);
+  background: rgba(0, 98, 245, 0.85);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 45px rgba(0, 98, 245, 0.8);
+}
+
+.playIcon {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+  margin-left: 5px; /* Compense le centre géométrique du triangle */
+  transition: transform 0.25s ease;
+}
+
+.videoCard:hover .playIcon {
+  transform: scale(1.05);
+}
+
+/* Texte sous le bouton Play */
+.playHint {
+  color: #e2e8f0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Barre de contrôles simulée au bas du lecteur */
+.videoBottomBar {
+  position: relative;
+  z-index: 3;
+  padding: 16px 28px 22px 28px;
+  background: linear-gradient(to top, rgba(6, 16, 33, 0.95), transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Ligne de progression */
+.progressTrack {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32%;
+  height: 100%;
+  background: linear-gradient(90deg, #0062f5, #38bdf8);
+  border-radius: 4px;
+}
+
+.controlsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  font-size: 12px;
+  color: #e2e8f0;
+}
+
+/* Toast interactif quand on clique sur la vidéo en cours de préparation */
+.toastNotice {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: rgba(11, 24, 48, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 98, 245, 0.4);
+  padding: 24px 32px;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  max-width: 440px;
+  width: 85%;
+  animation: fadeInToast 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInToast {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.toastTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.toastText {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.toastButton {
+  padding: 8px 20px;
+  background: #0062f5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toastButton:hover {
+  background: #0050c7;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .title {
+    font-size: 38px;
+  }
+
+  .videoCard {
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0 90px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .videoCard {
+    border-radius: 16px;
+    min-height: 280px;
+  }
+
+  .playButton {
+    width: 68px;
+    height: 68px;
+  }
+
+  .pulseRing {
+    width: 90px;
+    height: 90px;
+  }
+
+  .playIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .videoTopBar {
+    padding: 16px 20px;
+  }
+
+  .videoBottomBar {
+    padding: 12px 18px 16px 18px;
+  }
+}

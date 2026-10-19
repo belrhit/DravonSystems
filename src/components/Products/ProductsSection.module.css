@@ -1,0 +1,324 @@
+/* ==========================================================================
+   ProductsSection - Fluent 2 Design & Responsive Z-Pattern Showcase
+   ========================================================================== */
+
+.section {
+  position: relative;
+  width: 100%;
+  padding-top: var(--spacingVerticalXXL, 48px);
+  padding-bottom: calc(var(--spacingVerticalXXL, 48px) * 2);
+  scroll-margin-top: 100px;
+  background-color: transparent;
+  overflow: visible;
+}
+
+/* Conteneur centré largeur max 1200px */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* En-tête de section */
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(0, 98, 245, 0.08);
+  border: 1px solid rgba(0, 98, 245, 0.16);
+  color: #0062f5;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #0062f5;
+  box-shadow: 0 0 8px rgba(0, 98, 245, 0.6);
+}
+
+.title {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  color: #0b1e42;
+  text-align: center;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px 0;
+}
+
+.divider {
+  width: 72px;
+  height: 3px;
+  background: linear-gradient(90deg, #0062f5 0%, #33adff 100%);
+  border-radius: 2px;
+  margin: 0 auto 20px auto;
+}
+
+.subtitle {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--colorNeutralForeground2, #4b5563);
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Liste des produits (Z-Pattern) */
+.productsList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 84px;
+}
+
+/* Ligne produit à 2 colonnes */
+.productRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+  position: relative;
+}
+
+/* Ligne inversée : Image à gauche, Texte à droite */
+.productRowReverse {
+  flex-direction: row-reverse;
+}
+
+/* Colonne de texte */
+.textColumn {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.categoryTag {
+  display: inline-block;
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0062f5;
+  background-color: rgba(0, 98, 245, 0.06);
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.productTitle {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: var(--fontSizeHero700, 28px);
+  line-height: 1.25;
+  font-weight: 800;
+  color: #0b1e42;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+}
+
+.productDesc {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--colorNeutralForeground2, #4b5563);
+  margin: 0 0 24px 0;
+}
+
+/* Liste des 3 points forts */
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  width: 100%;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #1f2937;
+}
+
+.featureIcon {
+  color: #0062f5;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.featureText {
+  flex: 1;
+}
+
+/* Bouton Découvrir */
+.ctaButton {
+  min-width: 140px;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border-radius: var(--borderRadiusMedium, 8px) !important;
+  border-color: #0062f5 !important;
+  color: #0062f5 !important;
+  transition: all 0.25s ease !important;
+}
+
+.ctaButton:hover {
+  background-color: #0062f5 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 98, 245, 0.25) !important;
+}
+
+/* Colonne Image (Effet WOW & Flottant) */
+.imageColumn {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Conteneur d'image avec ombre douce et transition fluide */
+.imageCard {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  border-radius: var(--borderRadiusXLarge, 18px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(224, 229, 233, 0.8);
+  box-shadow: var(--shadow16, 0 8px 24px rgba(0, 0, 0, 0.08));
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Au survol : l'image remonte et l'ombre s'amplifie */
+.imageCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow28, 0 20px 36px rgba(0, 71, 186, 0.16));
+  border-color: rgba(0, 98, 245, 0.3);
+}
+
+.productImage {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .title {
+    font-size: 38px;
+  }
+
+  .productRow {
+    gap: 40px;
+  }
+
+  .productTitle {
+    font-size: 24px;
+  }
+
+  .productDesc {
+    font-size: 15.5px;
+  }
+}
+
+/* Responsive Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--spacingVerticalXXL, 36px);
+    padding-bottom: 60px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .header {
+    margin-bottom: 44px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .productsList {
+    row-gap: 56px;
+  }
+
+  /* Sur mobile, les colonnes s'empilent verticalement */
+  .productRow,
+  .productRowReverse {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  /* L'image passe TOUJOURS au-dessus du texte */
+  .imageColumn {
+    order: -1;
+    width: 100%;
+  }
+
+  .textColumn {
+    order: 1;
+    width: 100%;
+  }
+
+  .imageCard {
+    max-width: 100%;
+  }
+
+  .productTitle {
+    font-size: 22px;
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+}

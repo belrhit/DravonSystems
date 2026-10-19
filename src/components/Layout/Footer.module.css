@@ -1,0 +1,384 @@
+/* ==========================================================================
+   Footer Component - Exact Fluent.ai Design Replica for Dravon Systems
+   Background: linear-gradient(180deg, #0057BB 0%, #00278A 100%)
+   ========================================================================== */
+
+.footerWrapper {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #0057BB 0%, #00278A 100%);
+  color: #FFFFFF;
+  overflow: hidden;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* --- Feuillage botanique organique aux coins (Images exactes Fluent.ai) --- */
+.leafLeft {
+  position: absolute;
+  bottom: 52px;
+  left: 0;
+  width: 240px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  display: block;
+  user-select: none;
+}
+
+.leafRight {
+  position: absolute;
+  bottom: 52px;
+  right: 0;
+  width: 255px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  display: block;
+  user-select: none;
+}
+
+/* Conteneur principal 3 colonnes - Hauteur & Longueur généreuse comme dans l'exemplaire */
+.mainContainer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 92px 40px 115px 40px;
+  /* Grand espace bleu équilibré et aéré */
+  min-height: 520px;
+  box-sizing: border-box;
+}
+
+/* Grille 3 Colonnes Desktop */
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.3fr;
+  column-gap: 60px;
+  row-gap: 36px;
+  align-items: start;
+}
+
+/* --- Colonne 1 : Logo & Description --- */
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 16px;
+  text-decoration: none;
+  margin-bottom: 24px;
+  outline: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.logoLink:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.logoMark {
+  height: 112px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.logoText {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.035em;
+  color: #FFFFFF;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.logoDot {
+  color: #00d4ff;
+  /* Point cyan éclatant comme sur fluent.ai */
+}
+
+.logoTm {
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  color: #d0ddfe;
+  align-self: flex-start;
+  margin-top: 3px;
+  margin-left: 2px;
+}
+
+.brandDescription {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #d0ddfe;
+  /* Bleu lavande clair signature fluent.ai */
+  margin: 0;
+  max-width: 380px;
+  font-weight: 400;
+}
+
+/* --- Colonne 2 : Liens Entreprise --- */
+.linksColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.columnTitle {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 24px 0;
+  line-height: 1.3;
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.linkItem {
+  margin: 0;
+}
+
+.link {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  display: inline-block;
+}
+
+.link:hover {
+  color: #e87722;
+  /* Effet hover orange signature fluent.ai */
+  opacity: 0.95;
+}
+
+/* --- Colonne 3 : Nos Secteurs d'expérience --- */
+.sectorsColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sectorsList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  width: 100%;
+}
+
+.sectorCard {
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sectorCard:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #00d4ff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.sectorIconWrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(0, 212, 255, 0.18);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #00d4ff;
+}
+
+.sectorCard:nth-child(2) .sectorIconWrapper {
+  background: rgba(147, 197, 253, 0.2);
+  border-color: rgba(147, 197, 253, 0.4);
+  color: #93c5fd;
+}
+
+.sectorCard:nth-child(3) .sectorIconWrapper {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+
+.sectorTextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sectorTitle {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+}
+
+.sectorDescription {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 12.5px;
+  color: #d0ddfe;
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+/* --- Barre Inférieure (Copyright & Sélecteur de langue) --- */
+.bottomBar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 16px 40px;
+  box-sizing: border-box;
+}
+
+.bottomContent {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Bouton Sélecteur de langue en bas à gauche */
+.langButton {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+  background-color: #1e1e1e;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.langButton:hover {
+  background-color: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+.flagIcon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.copyrightText {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 14px;
+  color: #FFFFFF;
+  margin: 0;
+  text-align: center;
+  flex: 1;
+  font-weight: 400;
+}
+
+/* Espace réservé pour équilibrer le bouton à gauche */
+.spacerRight {
+  width: 110px;
+}
+
+/* ==========================================================================
+   Responsive Mobile Breakpoints
+   ========================================================================== */
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+  }
+
+  .sectorsColumn {
+    grid-column: span 2;
+  }
+
+  .leafLeft,
+  .leafRight {
+    width: 160px;
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 50px 24px 64px 24px;
+    min-height: auto;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+    text-align: left;
+  }
+
+  .logoText {
+    font-size: 38px;
+  }
+
+  .logoMark {
+    height: 64px;
+  }
+
+  .brandDescription {
+    max-width: 100%;
+  }
+
+  .leafLeft,
+  .leafRight {
+    display: none;
+    /* Masqué sur très petits écrans pour une lisibilité optimale */
+  }
+
+  .bottomContent {
+    flex-direction: column;
+    row-gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .spacerRight {
+    display: none;
+  }
+}

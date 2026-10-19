@@ -1,0 +1,205 @@
+/* Section Qui sommes-nous - Réplique exacte du Design Fluent.ai & Fluent 2 */
+
+.section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0 60px 0;
+  scroll-margin-top: 140px;
+  background-color: transparent; /* Fond 100% transparent pour laisser voir les vagues organiques */
+  overflow: visible;
+}
+
+/* Conteneur large aligné sur la largeur de la navigation et de la page */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 52px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titre principal centré comme sur Fluent.ai */
+.title {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  color: #0b1e42; /* Bleu nuit profond signature Fluent.ai */
+  text-align: center;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px 0;
+}
+
+/* Ligne grise sous le titre (style exact Fluent.ai) */
+.divider {
+  width: 80px;
+  height: 3px;
+  background-color: #dce4ec;
+  border-radius: 2px;
+  margin: 0 auto 52px auto;
+}
+
+/* Paragraphe d'accroche en gras et bleu vif Fluent.ai (#0062f5) */
+.hook {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0062f5; /* Bleu vif électrique Fluent.ai */
+  line-height: 1.65;
+  text-align: left;
+  margin: 0 0 28px 0;
+  letter-spacing: -0.01em;
+}
+
+/* Corps du texte aéré avec interligne généreux (line-height: 1.75) */
+.bodyText {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #374151; /* Gris sobre et lisible Fluent */
+  line-height: 1.75;
+  text-align: left;
+  margin: 0 0 28px 0;
+}
+
+/* Liste des 2 axes inspirée de Fluent.ai avec flux de texte naturel */
+.axesList {
+  list-style: none;
+  padding: 0 0 0 20px;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.axisItem {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.75;
+  text-align: left;
+}
+
+/* Numérotation style Fluent.ai */
+.axisNumber {
+  color: #0062f5;
+  font-weight: 700;
+  font-size: 17px;
+  margin-right: 12px;
+  user-select: none;
+}
+
+/* Titre des axes */
+.axisTitle {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Sous-section Accompagnement */
+.subSection {
+  margin-top: 14px;
+  padding-top: 6px;
+}
+
+.subTitle {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  color: #0b1e42;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-align: left;
+  margin: 0 0 16px 0;
+}
+
+.finalText {
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.75;
+  text-align: left;
+  margin: 0;
+}
+
+/* Mots-clés en gras et bleu vif selon les spécifications */
+.highlight {
+  color: #0062f5;
+  font-weight: 700;
+}
+
+/* Adaptation Responsive */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .hook {
+    font-size: 19px;
+  }
+
+  .bodyText,
+  .axisItem,
+  .finalText {
+    font-size: 16.5px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0 90px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .divider {
+    width: 60px;
+    margin-bottom: 36px;
+  }
+
+  .hook {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .bodyText {
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: 22px;
+  }
+
+  .axesList {
+    padding-left: 8px;
+    margin-bottom: 28px;
+    row-gap: 14px;
+  }
+
+  .axisItem {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .subTitle {
+    font-size: 22px;
+  }
+
+  .finalText {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}

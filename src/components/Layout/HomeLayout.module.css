@@ -1,0 +1,76 @@
+.layoutWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+/* Fond organique maintenu fixe pour accompagner le défilement */
+.backgroundContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  /* Animation de respiration très lente */
+  animation: breathe 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Contenu principal avec compensation pour la Navbar en position fixed */
+.mainContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 110px;
+  /* Dégage parfaitement la Navbar haute (logo 124px) avec un espace aéré */
+}
+
+/* Structure de la section Hero */
+.heroSection {
+  width: 100%;
+  min-height: calc(100vh - 175px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .backgroundImage {
+    object-position: center 30%;
+  }
+
+  .mainContent {
+    padding-top: 140px;
+  }
+}

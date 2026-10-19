@@ -1,0 +1,52 @@
+.langWrapper {
+  position: fixed;
+  bottom: 24px;
+  left: 28px;
+  z-index: 90;
+}
+
+.langButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1e293b;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: all 0.2s ease;
+  user-select: none;
+  outline: none;
+}
+
+.langButton:hover {
+  background-color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.langButton:focus-visible {
+  outline: 2px solid #0047ba;
+  outline-offset: 2px;
+}
+
+.langFlag {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.langText {
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .langWrapper {
+    bottom: 16px;
+    left: 16px;
+  }
+}
